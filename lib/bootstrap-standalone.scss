@@ -1,0 +1,25 @@
+/**
+ * In order to do something like .root { @import "bootstrap"; }, we need to
+ * move some extra definitions out of the included files.
+ *
+ * These definitions are moved here. This means that in order to emulate importing
+ * boostrap into your project, you need to @import both "bootstrap" and
+ * @import "bootstrap-standalone".
+ */
+
+// from _glyphicons.scss
+@font-face {
+  font-family: 'Glyphicons Halflings';
+  src: url('#{$icon-font-path}#{$icon-font-name}.eot');
+  src: url('#{$icon-font-path}#{$icon-font-name}.eot?#iefix') format('embedded-opentype'),
+       url('#{$icon-font-path}#{$icon-font-name}.woff') format('woff'),
+       url('#{$icon-font-path}#{$icon-font-name}.ttf') format('truetype'),
+       url('#{$icon-font-path}#{$icon-font-name}.svg#glyphicons_halflingsregular') format('svg');
+}
+
+// from _print.scss
+@media print {
+  @page {
+    margin: 2cm .5cm;
+  }
+}
